@@ -8,3 +8,6 @@ From the project root run the installation command <make package-install>
 See examplary installation and brain-even game: https://asciinema.org/a/tjS7nT0kCqvyKxDfZFU6GfRNM
 
 See brain-calc game: https://asciinema.org/a/Gr8JsMRRfC6G5tj6hB5qXK8CG
+
+See brain-gcd game: https://asciinema.org/a/64DPdFp6RgPoRZ0xzmKCcclov
+
