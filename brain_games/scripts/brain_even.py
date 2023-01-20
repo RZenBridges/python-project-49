@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import random
-import prompt
 import brain_games.scripts.brain_games as introduction
 
 

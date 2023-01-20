@@ -25,7 +25,7 @@ def main():
         a = random.randint(1, 10)
         b = random.randint(11, 100)
         operator = {"+": add, "*": multiply, "-": subtract}
-        action = random.choice(["+","*","-"])
+        action = random.choice(["+", "*", "-"])
         key = operator[action](a, b)
         print(f"Question: {b} {action} {a}")
         ans = input("Your answer: ")
@@ -39,6 +39,7 @@ def main():
     else:
         if correct_answers == 3:
             print(f"Congratulations, {name.capitalize()}!")
+
 
 if __name__ == "__main__":
     main()
