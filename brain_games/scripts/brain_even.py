@@ -2,17 +2,11 @@
 
 import random
 import prompt
-
-
-def hello():
-    print("Welcome to the Brain Games!")
-    name = prompt.string("May I have your name? ")
-    print(f"Hello, {name.capitalize()}!")
-    return name
+import brain_games.scripts.brain_games as introduction
 
 
 def main():
-    name = hello()
+    name = introduction.main()
     correct_answers = 0
     continue_game = True
     print("Answer 'yes' if the number is even, otherwise answer 'no'.")
@@ -35,7 +29,7 @@ def main():
             print(f"'{ans}' is wrong answer ;(. Correct answer was '{opp}'")
             print(f"Let's try again, {name.capitalize()}!")
     if correct_answers == 3:
-        print(f"Congratulation, {name.capitalize()}!")
+        print(f"Congratulations, {name.capitalize()}!")
 
 
 if __name__ == '__main__':
