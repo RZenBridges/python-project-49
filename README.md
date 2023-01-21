@@ -13,3 +13,5 @@ See brain-gcd game: https://asciinema.org/a/64DPdFp6RgPoRZ0xzmKCcclov
 
 See brain-progression game: https://asciinema.org/a/VOgdCRr7q5HujBJc7hWbdrzyZ
 
+See brain-prime game: https://asciinema.org/a/7FeUPtzQ0n4QkDxaOWzO5cR3N
+
