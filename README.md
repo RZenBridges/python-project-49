@@ -11,3 +11,5 @@ See brain-calc game: https://asciinema.org/a/Gr8JsMRRfC6G5tj6hB5qXK8CG
 
 See brain-gcd game: https://asciinema.org/a/64DPdFp6RgPoRZ0xzmKCcclov
 
+See brain-progression game: https://asciinema.org/a/VOgdCRr7q5HujBJc7hWbdrzyZ
+

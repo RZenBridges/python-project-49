@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import random
-import brain_games.scripts.brain_games as calc_game
+import brain_games.scripts.brain_games as game_interface
 
 
 def add(a, b):
@@ -17,7 +17,7 @@ def subtract(a, b):
 
 
 def main():
-    name = calc_game.main()
+    name = game_interface.main()
     print("What is the result of the expression?")
     correct_answers = 0
     continue_game = True
@@ -33,12 +33,10 @@ def main():
             correct_answers += 1
             print("Correct!")
         else:
-            print(f"'{ans}' is wrong answer ;(. Correct answer was '{key}'")
-            print(f"Let's try again, {name.capitalize()}!")
+            game_interface.losing(ans, key, name)
             continue_game = False
     else:
-        if correct_answers == 3:
-            print(f"Congratulations, {name.capitalize()}!")
+        game_interface.winning(correct_answers, name)
 
 
 if __name__ == "__main__":

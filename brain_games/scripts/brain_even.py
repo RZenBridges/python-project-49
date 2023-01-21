@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
 import random
-import brain_games.scripts.brain_games as introduction
+import brain_games.scripts.brain_games as game_interface
 
 
 def main():
-    name = introduction.main()
+    name = game_interface.main()
     correct_answers = 0
     continue_game = True
     print("Answer 'yes' if the number is even, otherwise answer 'no'.")
@@ -25,10 +25,9 @@ def main():
                 opp = "no"
             elif ans == "no":
                 opp = "yes"
-            print(f"'{ans}' is wrong answer ;(. Correct answer was '{opp}'")
-            print(f"Let's try again, {name.capitalize()}!")
-    if correct_answers == 3:
-        print(f"Congratulations, {name.capitalize()}!")
+            game_interface.losing(ans, opp, name)
+    else:
+        game_interface.winning(correct_answers, name)
 
 
 if __name__ == '__main__':
