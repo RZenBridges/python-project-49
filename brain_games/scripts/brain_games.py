@@ -4,9 +4,10 @@ import brain_games.cli
 
 def main():
     print("Welcome to the Brain Games!")
-    name = brain_games.cli.welcome_user()
-    return name.capitalize()
-
+    if __name__ != "__main__":
+        brain_games.cli.welcome_user().capitalize()
+    else:
+        return brain_games.cli.welcome_user().capitalize()
 
 def winning(correct_answers, name):
     if correct_answers == 3:
