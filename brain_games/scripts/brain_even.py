@@ -13,6 +13,7 @@ def num_is_even(number, ans):
 
 
 def main():
+    """ Starts a games that apresents a number for the user to answer if the number is even or not """
     name = game_interface.naming()
     correct_answers = 0
     continue_game = True

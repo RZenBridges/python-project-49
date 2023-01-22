@@ -6,9 +6,11 @@ def main():
     print("Welcome to the Brain Games!")
     brain_games.cli.welcome_user().capitalize()
 
+
 def naming():
     print("Welcome to the Brain Games!")
     return brain_games.cli.welcome_user().capitalize()
+
 
 def winning(correct_answers, name):
     if correct_answers == 3:
