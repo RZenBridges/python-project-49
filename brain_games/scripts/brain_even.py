@@ -25,8 +25,8 @@ def main():
         print(f"Question: {number}")
         ans = input("Your answer: ")
         continue_game = num_is_even(number, ans)
-        if continue_game == True:
-            correct_answers +=1
+        if continue_game:
+            correct_answers += 1
         else:
             if ans == "yes":
                 opp = "no"

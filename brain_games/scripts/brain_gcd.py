@@ -3,7 +3,7 @@ import random
 import brain_games.scripts.brain_games as game_interface
 
 
-def is_int_divisor(divisor, num, output:list):
+def is_int_divisor(divisor, num, output: list):
     """Adds divisor to the output if num % divisor = 0"""
     if num % divisor == 0:
         output.append(divisor)
