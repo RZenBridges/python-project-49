@@ -3,15 +3,20 @@ import random
 import brain_games.scripts.brain_games as game_interface
 
 
+def is_int_divisor(divisor, num, output:list):
+    """Adds divisor to the output if num % divisor = 0"""
+    if num % divisor == 0:
+        output.append(divisor)
+
+
 def common_d_finder(a, b):
+    """Finds the biggest common ineger divisor for 2 input  numbers"""
     a_range = []
     b_range = []
-    for num in range(1, a + 1):
-        if a % num == 0:
-            a_range.append(num)
-    for num in range(1, b + 1):
-        if b % num == 0:
-            b_range.append(num)
+    for i in range(1, a + 1):
+        is_int_divisor(i, a, a_range)
+    for i in range(1, b + 1):
+        is_int_divisor(i, b, b_range)
     return max(set(a_range) & set(b_range))
 
 
