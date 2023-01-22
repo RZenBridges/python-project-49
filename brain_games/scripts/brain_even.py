@@ -5,6 +5,7 @@ import brain_games.scripts.brain_games as game_interface
 
 
 def num_is_even(number, ans):
+    """ Checks if the number is even and if the user's answer is correct"""
     if number % 2 == 0 and ans == 'yes':
         print("Correct!")
         return (True, 'no')
@@ -22,7 +23,7 @@ def main():
     name = game_interface.naming()
     correct_answers = 0
     continue_game = True
-    print("Answer 'yes' if the number is even, otherwise answer 'no'.")
+    print('Answer "yes" if the number is even, otherwise answer "no".')
     while correct_answers < 3 and continue_game:
         number = random.randint(1, 100)
         print(f"Question: {number}")
