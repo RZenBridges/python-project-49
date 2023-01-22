@@ -14,7 +14,7 @@ def winning(correct_answers, name):
 
 
 def losing(right, wrong, name):
-    print(f"'{right} is a wrong answer ;('. Correct answer was '{wrong}'.")
+    print(f"'{right}' is a wrong answer ;('. Correct answer was '{wrong}'.")
     print(f"Let's try again, {name}!")
 
 

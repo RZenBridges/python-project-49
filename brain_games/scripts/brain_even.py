@@ -4,6 +4,17 @@ import random
 import brain_games.scripts.brain_games as game_interface
 
 
+def num_is_even(number, ans):
+    if number % 2 == 0 and ans == "yes":
+        print("Correct!")
+        return True
+    elif number % 2 == 1 and ans == "no":
+        print("Correct!")
+        return True
+    else:
+        return False
+
+
 def main():
     name = game_interface.main()
     correct_answers = 0
@@ -13,14 +24,10 @@ def main():
         number = random.randint(1, 100)
         print(f"Question: {number}")
         ans = input("Your answer: ")
-        if number % 2 == 0 and ans == "yes":
-            correct_answers += 1
-            print("Correct!")
-        elif number % 2 == 1 and ans == "no":
-            correct_answers += 1
-            print("Correct!")
+        continue_game = num_is_even(number, ans)
+        if continue_game == True:
+            correct_answers +=1
         else:
-            continue_game = False
             if ans == "yes":
                 opp = "no"
             elif ans == "no":

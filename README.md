@@ -5,7 +5,8 @@
 
 From the project root run the installation command <make package-install>
 
-See examplary installation and brain-even game: https://asciinema.org/a/tjS7nT0kCqvyKxDfZFU6GfRNM
+See examplary installation and brain-even game:
+[![asciicast](https://asciinema.org/a/tjS7nT0kCqvyKxDfZFU6GfRNM.png)](https://asciinema.org/a/tjS7nT0kCqvyKxDfZFU6GfRNM)
 
 See brain-calc game: https://asciinema.org/a/Gr8JsMRRfC6G5tj6hB5qXK8CG
 
