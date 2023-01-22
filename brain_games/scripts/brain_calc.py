@@ -26,7 +26,7 @@ def phrase_generator():
 
 
 def main():
-    name = game_interface.main()
+    name = game_interface.naming()
     print("What is the result of the expression?")
     correct_answers = 0
     continue_game = True

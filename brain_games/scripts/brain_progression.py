@@ -16,7 +16,7 @@ def progression_generator():
 
 
 def main():
-    name = game_interface.main()
+    name = game_interface.naming()
     print("What number is missing in the progression?")
     correct_answers = 0
     continue_game = True

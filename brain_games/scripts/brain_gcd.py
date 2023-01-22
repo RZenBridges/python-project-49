@@ -21,7 +21,7 @@ def common_d_finder(a, b):
 
 
 def main():
-    name = game_interface.main()
+    name = game_interface.naming()
     print("Find the greatest common divisor of given number.")
     correct_answers = 0
     continue_game = True

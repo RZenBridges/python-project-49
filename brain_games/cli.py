@@ -3,6 +3,8 @@ import prompt
 
 
 def welcome_user():
-    name = prompt.string("May I have your name? ")
+    name = ''
+    while name == '' or name.count(' ') > 0:
+        name = prompt.string("May I have your name? No spaces: ")
     print(f"Hello, {name.capitalize()}!")
     return name
