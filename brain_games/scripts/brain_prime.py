@@ -19,7 +19,7 @@ def guess_result(guess, key):
 
 def main():
     name = game_interface.naming()
-    print("Answer 'yes' if given number is prime. Otherwise answer 'no'.")
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
     correct_answers = 0
     continue_game = True
     while correct_answers < 3 and continue_game:
