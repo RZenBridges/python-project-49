@@ -3,37 +3,46 @@
 import random
 import brain_games.scripts.brain_games as game_interface
 
+YES = 'yes'
+NO = 'no'
 
-def num_is_even(number, ans):
+
+def return_opposit(answer):
+    if answer == YES:
+        return NO
+    if answer == NO:
+        return YES
+
+
+def num_is_even(number, answer):
     """ Checks if the number is even and if the user's answer is correct"""
-    if number % 2 == 0 and ans == 'yes':
+    if (number % 2 == 0 and answer == YES) or\
+            (number % 2 == 1 and answer == NO):
         print("Correct!")
-        return (True, 'no')
-    elif number % 2 == 1 and ans == 'no':
-        print("Correct!")
-        return (True, 'yes')
-    elif number % 2 == 1 and ans != 'no':
-        return (False, 'no')
-    elif number % 2 == 0 and ans != 'yes':
-        return (False, 'yes')
+        return (True, return_opposit(answer))
+    elif number % 2 == 0 and answer != YES:
+        return (False, YES)
+    elif number % 2 == 1 and answer != NO:
+        return (False, NO)
 
 
 def main():
-    """ Starts a games that apresents a number for the user"""
+    """ Starts a games that presents a number for the user"""
     """ to answer if the number is even or not """
     name = game_interface.naming()
     correct_answers = 0
     continue_game = True
     print('Answer "yes" if the number is even, otherwise answer "no".')
+
     while correct_answers < 3 and continue_game:
         number = random.randint(1, 100)
         print(f"Question: {number}")
-        ans = input("Your answer: ")
-        continue_game, opp = num_is_even(number, ans)
+        user_answer = input("Your answer: ")
+        continue_game, opposite = num_is_even(number, user_answer)
         if continue_game:
             correct_answers += 1
         else:
-            game_interface.losing(ans, opp, name)
+            game_interface.losing(user_answer, opposite, name)
     else:
         game_interface.winning(correct_answers, name)
 

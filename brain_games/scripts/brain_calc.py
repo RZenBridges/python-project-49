@@ -4,24 +4,18 @@ import random
 import brain_games.scripts.brain_games as game_interface
 
 
-def add(a, b):
-    return a + b
+OPERATOR = {
+    "+": lambda x, y: x + y,
+    "*": lambda x, y: x * y,
+    "-": lambda x, y: y - x
+}
 
 
-def multiply(a, b):
-    return a * b
-
-
-def subtract(a, b):
-    return b - a
-
-
-def phrase_generator():
+def generate_equation():
     a = random.randint(1, 10)
     b = random.randint(11, 100)
-    operator = {"+": add, "*": multiply, "-": subtract}
-    action = random.choice(["+", "*", "-"])
-    key = operator[action](a, b)
+    action = random.choice(list(OPERATOR.keys()))
+    key = OPERATOR[action](a, b)
     return (f"{b} {action} {a}", key)
 
 
@@ -31,14 +25,14 @@ def main():
     correct_answers = 0
     continue_game = True
     while correct_answers < 3 and continue_game:
-        equation, key = phrase_generator()
+        equation, key = generate_equation()
         print(f"Question: {equation}")
-        ans = input("Your answer: ")
-        if int(ans) == key:
+        answer = input("Your answer: ")
+        if int(answer) == key:
             correct_answers += 1
             print("Correct!")
         else:
-            game_interface.losing(ans, key, name)
+            game_interface.losing(answer, key, name)
             continue_game = False
     else:
         game_interface.winning(correct_answers, name)

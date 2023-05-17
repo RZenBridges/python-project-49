@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-import brain_games.cli
+from brain_games.cli import welcome_user
 
 
 def main():
     print("Welcome to the Brain Games!")
-    brain_games.cli.welcome_user().capitalize()
+    welcome_user().capitalize()
 
 
 def naming():
     print("Welcome to the Brain Games!")
-    return brain_games.cli.welcome_user().capitalize()
+    return welcome_user().capitalize()
 
 
 def winning(correct_answers, name):
@@ -17,8 +17,8 @@ def winning(correct_answers, name):
         print(f"Congratulations, {name}!")
 
 
-def losing(right, wrong, name):
-    print(f"'{right}' is a wrong answer ;('. Correct answer was '{wrong}'.")
+def losing(wrong, right, name):
+    print(f"'{wrong}' is a wrong answer ;('. Correct answer was '{right}'.")
     print(f"Let's try again, {name}!")
 
 

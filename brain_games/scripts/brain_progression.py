@@ -2,17 +2,14 @@ import random
 import brain_games.scripts.brain_games as game_interface
 
 
-def progression_generator():
+def generate_progression():
     start = random.randint(1, 15)
     step = random.randint(1, 10)
-    progression = [start]
-    for i in range(9):
-        progression.append(progression[-1] + step)
-    sqnc = [str(i) for i in progression]
-    ind = random.randint(0, 9)
-    hidden = sqnc[ind]
-    sqnc[ind] = '..'
-    return (' '.join(sqnc), hidden)
+    progression = [str(i) for i in list(range(start, start+step*10, step))]
+    hide_index = random.randint(0, 9)
+    hidden_element = progression[hide_index]
+    progression[hide_index] = '..'
+    return (' '.join(progression), hidden_element)
 
 
 def main():
@@ -21,14 +18,14 @@ def main():
     correct_answers = 0
     continue_game = True
     while correct_answers < 3 and continue_game:
-        progression, key = progression_generator()
+        progression, key = generate_progression()
         print(f"Question: {progression}")
-        ans = input("Your answer: ")
-        if int(ans) == int(key):
+        user_answer = input("Your answer: ")
+        if int(user_answer) == int(key):
             correct_answers += 1
             print("Correct!")
         else:
-            game_interface.losing(ans, key, name)
+            game_interface.losing(user_answer, key, name)
             continue_game = False
     else:
         game_interface.winning(correct_answers, name)
