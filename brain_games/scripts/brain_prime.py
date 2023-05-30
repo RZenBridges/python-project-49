@@ -1,31 +1,5 @@
-import random
 import brain_games.scripts.brain_games as game_interface
-
-YES = 'yes'
-NO = 'no'
-
-
-def is_prime(number):
-    if number == 1:
-        return "yes"
-    for i in range(2, number):
-        if number % i == 0:
-            return "no"
-    return "yes"
-
-
-def guess_result(user_answer, correct_answer):
-    if user_answer == correct_answer:
-        print("Correct!")
-        return True
-    else:
-        return False
-
-
-def draw_game():
-    random_number = random.randint(1, 100)
-    correct_answer = is_prime(random_number)
-    return random_number, correct_answer
+from brain_games.games.prime import guess_result, generate_game
 
 
 def main():
@@ -34,7 +8,7 @@ def main():
     correct_answers = 0
     continue_game = True
     while correct_answers < 3 and continue_game:
-        number, correct_answer = draw_game()
+        number, correct_answer = generate_game()
         print(f"Question: {number}")
         user_answer = input("Your answer: ")
         continue_game = guess_result(user_answer, correct_answer)

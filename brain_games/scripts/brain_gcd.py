@@ -1,6 +1,5 @@
-import math
-import random
 import brain_games.scripts.brain_games as game_interface
+from brain_games.games.gcd import generate_numbers
 
 
 def main():
@@ -9,11 +8,9 @@ def main():
     correct_answers = 0
     continue_game = True
     while correct_answers < 3 and continue_game:
-        a = random.randint(1, 100)
-        b = random.randint(1, 100)
+        a, b, common_d = generate_numbers()
         print(f"Question: {a} {b}")
         user_answer = int(input("Your answer: "))
-        common_d = math.gcd(a, b)
         if common_d == user_answer:
             print("Correct!")
             correct_answers += 1

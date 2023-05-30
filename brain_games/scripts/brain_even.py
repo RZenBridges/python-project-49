@@ -1,29 +1,7 @@
 #!/usr/bin/env python3
 
-import random
 import brain_games.scripts.brain_games as game_interface
-
-YES = 'yes'
-NO = 'no'
-
-
-def return_opposit(answer):
-    if answer == YES:
-        return NO
-    if answer == NO:
-        return YES
-
-
-def num_is_even(number, answer):
-    """ Checks if the number is even and if the user's answer is correct"""
-    if (number % 2 == 0 and answer == YES) or\
-            (number % 2 == 1 and answer == NO):
-        print("Correct!")
-        return (True, return_opposit(answer))
-    elif number % 2 == 0 and answer != YES:
-        return (False, YES)
-    elif number % 2 == 1 and answer != NO:
-        return (False, NO)
+from brain_games.games.even import num_is_even, generate_number
 
 
 def main():
@@ -35,7 +13,7 @@ def main():
     print('Answer "yes" if the number is even, otherwise answer "no".')
 
     while correct_answers < 3 and continue_game:
-        number = random.randint(1, 100)
+        number = generate_number()
         print(f"Question: {number}")
         user_answer = input("Your answer: ")
         continue_game, opposite = num_is_even(number, user_answer)
