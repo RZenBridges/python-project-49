@@ -16,8 +16,8 @@ def main():
     while correct_answers < 3 and continue_game:
         progression, key = generate_game()
         print(f"Question: {progression}")
-        user_answer = input("Your answer: ")
-        if int(user_answer) == int(key):
+        user_answer = int(input("Your answer: "))
+        if user_answer == key:
             correct_answers += 1
             print("Correct!")
         else:

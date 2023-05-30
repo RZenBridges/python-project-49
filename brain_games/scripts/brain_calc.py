@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import brain_games.scripts.brain_games as game_interface
-from brain_games.games.calc import generate_equation
+from brain_games.games.calc import generate_game
 
 
 def main():
@@ -14,10 +14,10 @@ def main():
     continue_game = True
 
     while correct_answers < 3 and continue_game:
-        equation, key = generate_equation()
+        equation, key = generate_game()
         print(f"Question: {equation}")
-        user_answer = input("Your answer: ")
-        if int(user_answer) == key:
+        user_answer = int(input("Your answer: "))
+        if user_answer == key:
             correct_answers += 1
             print("Correct!")
         else:
