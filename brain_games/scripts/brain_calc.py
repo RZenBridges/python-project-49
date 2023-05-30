@@ -16,12 +16,12 @@ def main():
     while correct_answers < 3 and continue_game:
         equation, key = generate_equation()
         print(f"Question: {equation}")
-        answer = input("Your answer: ")
-        if int(answer) == key:
+        user_answer = input("Your answer: ")
+        if int(user_answer) == key:
             correct_answers += 1
             print("Correct!")
         else:
-            game_interface.losing(answer, key, name)
+            game_interface.losing(user_answer, key, name)
             continue_game = False
     else:
         game_interface.winning(correct_answers, name)

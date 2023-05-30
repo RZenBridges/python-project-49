@@ -13,14 +13,6 @@ def is_prime(number):
     return "yes"
 
 
-def guess_result(user_answer, correct_answer):
-    if user_answer == correct_answer:
-        print("Correct!")
-        return True
-    else:
-        return False
-
-
 def generate_game():
     random_number = random.randint(1, 100)
     correct_answer = is_prime(random_number)
