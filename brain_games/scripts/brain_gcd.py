@@ -15,7 +15,7 @@ def main():
 
     while correct_answers < 3 and continue_game:
         number_1, number_2, key = generate_game()
-        print(f"Question: {number_1} and {number_2}")
+        print(f"Question: {number_1} {number_2}")
         user_answer = int(input("Your answer: "))
         if user_answer == key:
             correct_answers += 1
