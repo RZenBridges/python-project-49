@@ -5,10 +5,14 @@ from brain_games.games.calc import generate_equation
 
 
 def main():
+    """ Starts a games that presents aa arithmetic expression"""
+    """ for the user to calculate """
+
     name = game_interface.naming()
     print("What is the result of the expression?")
     correct_answers = 0
     continue_game = True
+
     while correct_answers < 3 and continue_game:
         equation, key = generate_equation()
         print(f"Question: {equation}")
