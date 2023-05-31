@@ -10,21 +10,19 @@ def main():
 
     name = game_interface.naming()
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
-    correct_answers = 0
-    continue_game = True
 
-    while correct_answers < 3 and continue_game:
+    for round in range(3):
         number, key = generate_game()
         print(f"Question: {number}")
         user_answer = input("Your answer: ")
+
         if user_answer == key:
-            correct_answers += 1
             print("Correct!")
         else:
             game_interface.losing(user_answer, key, name)
-            continue_game = False
+            break
     else:
-        game_interface.winning(correct_answers, name)
+        game_interface.winning(name)
 
 
 if __name__ == "__main__":
