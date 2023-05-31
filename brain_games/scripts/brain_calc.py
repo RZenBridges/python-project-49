@@ -10,21 +10,19 @@ def main():
 
     name = game_interface.naming()
     print("What is the result of the expression?")
-    correct_answers = 0
-    continue_game = True
 
-    while correct_answers < 3 and continue_game:
+    for round in range(3):
         equation, key = generate_game()
         print(f"Question: {equation}")
-        user_answer = int(input("Your answer: "))
+        user_answer = input("Your answer: ")
+
         if user_answer == key:
-            correct_answers += 1
             print("Correct!")
         else:
             game_interface.losing(user_answer, key, name)
-            continue_game = False
+            break
     else:
-        game_interface.winning(correct_answers, name)
+        game_interface.winning(name)
 
 
 if __name__ == "__main__":

@@ -10,21 +10,19 @@ def main():
 
     name = game_interface.naming()
     print("Find the greatest common divisor of given numbers.")
-    correct_answers = 0
-    continue_game = True
 
-    while correct_answers < 3 and continue_game:
-        number_1, number_2, key = generate_game()
-        print(f"Question: {number_1} {number_2}")
-        user_answer = int(input("Your answer: "))
+    for round in range(3):
+        numbers, key = generate_game()
+        print(f"Question: {numbers[0]} {numbers[1]}")
+        user_answer = input("Your answer: ")
+
         if user_answer == key:
-            correct_answers += 1
             print("Correct!")
         else:
             game_interface.losing(user_answer, key, name)
-            continue_game = False
+            break
     else:
-        game_interface.winning(correct_answers, name)
+        game_interface.winning(name)
 
 
 if __name__ == "__main__":

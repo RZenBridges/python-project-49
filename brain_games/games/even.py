@@ -1,13 +1,7 @@
 import random
 
-YES = 'yes'
-NO = 'no'
-
 
 def generate_game():
     number = random.randint(1, 100)
-    if number % 2 == 0:
-        key = YES
-    else:
-        key = NO
+    key = 'yes' if number % 2 == 0 else 'no'
     return number, key

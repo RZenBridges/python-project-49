@@ -12,5 +12,5 @@ def generate_game():
     a = random.randint(1, 10)
     b = random.randint(11, 100)
     action = random.choice(list(OPERATOR.keys()))
-    key = OPERATOR[action](a, b)
+    key = str(OPERATOR[action](a, b))
     return f"{b} {action} {a}", key

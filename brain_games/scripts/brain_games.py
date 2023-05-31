@@ -12,9 +12,8 @@ def naming():
     return welcome_user().capitalize()
 
 
-def winning(correct_answers, name):
-    if correct_answers == 3:
-        print(f"Congratulations, {name}!")
+def winning(name):
+    print(f"Congratulations, {name}!")
 
 
 def losing(wrong, right, name):
