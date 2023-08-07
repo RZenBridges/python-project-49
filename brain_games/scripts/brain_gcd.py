@@ -1,28 +1,22 @@
 #!/usr/bin/env python3
 
-import brain_games.scripts.brain_games as game_interface
+from brain_games.engine import play_game
 from brain_games.games.gcd import generate_game
+from brain_games.scripts import brain_games as game_interface
 
 
 def main():
     """ Starts a games that presents two numbers for the user"""
     """ to answer to find the greatest common divisor"""
 
-    name = game_interface.naming()
-    print("Find the greatest common divisor of given numbers.")
+    player = game_interface.naming()
+    description = "Find the greatest common divisor of given numbers."
+    victory, user_answer, key = play_game(description, generate_game)
 
-    for round in range(3):
-        numbers, key = generate_game()
-        print(f"Question: {numbers[0]} {numbers[1]}")
-        user_answer = input("Your answer: ")
-
-        if user_answer == key:
-            print("Correct!")
-        else:
-            game_interface.losing(user_answer, key, name)
-            break
+    if victory:
+        game_interface.winning(player)
     else:
-        game_interface.winning(name)
+        game_interface.losing(user_answer, key, player)
 
 
 if __name__ == "__main__":
