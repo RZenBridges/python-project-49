@@ -30,7 +30,7 @@ def play_game(generate_game, rounds=3):
 
 
 def game_on(game):
-    description, generate_game = game
+    generate_game, description = game
     print(description)
 
     player = game_interface.naming()
