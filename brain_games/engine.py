@@ -30,10 +30,11 @@ def play_game(generate_game, rounds=3):
 
 
 def game_on(game):
-    print(game[1])
+    description, generate_game = game
+    print(description)
 
     player = game_interface.naming()
-    victory, user_answer, key = play_game(game[0])
+    victory, user_answer, key = play_game(generate_game)
 
     if victory:
         game_interface.winning(player)
