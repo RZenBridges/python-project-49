@@ -1,5 +1,7 @@
 import random
 
+DESCRIPTION = "What number is missing in the progression?"
+
 
 def generate_game():
     start = random.randint(1, 15)

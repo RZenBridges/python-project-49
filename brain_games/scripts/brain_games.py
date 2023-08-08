@@ -12,14 +12,5 @@ def naming():
     return welcome_user().capitalize()
 
 
-def winning(name):
-    print(f"Congratulations, {name}!")
-
-
-def losing(wrong, right, name):
-    print(f"'{wrong}' is a wrong answer ;('. Correct answer was '{right}'.")
-    print(f"Let's try again, {name}!")
-
-
 if __name__ == "__main__":
     main()
