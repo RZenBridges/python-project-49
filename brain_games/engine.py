@@ -1,4 +1,19 @@
+import brain_games.games
 from brain_games.scripts import brain_games as game_interface
+
+
+GAME = {
+    "calc": (brain_games.games.calc.generate_game,
+             "What is the result of the expression?"),
+    "even": (brain_games.games.even.generate_game,
+             'Answer "yes" if the number is even, otherwise answer "no".'),
+    "gcd": (brain_games.games.gcd.generate_game,
+            "Find the greatest common divisor of given numbers."),
+    "prime": (brain_games.games.prime.generate_game,
+              'Answer "yes" if given number is prime. Otherwise answer "no".'),
+    "progression": (brain_games.games.progression.generate_game,
+                    "What number is missing in the progression?"),
+}
 
 
 def play_game(generate_game, rounds=3):
@@ -14,11 +29,11 @@ def play_game(generate_game, rounds=3):
         return user_answer == key, user_answer, key
 
 
-def game_on(description, generate_game):
-    print(description)
+def game_on(game):
+    print(game[1])
 
     player = game_interface.naming()
-    victory, user_answer, key = play_game(generate_game)
+    victory, user_answer, key = play_game(game[0])
 
     if victory:
         game_interface.winning(player)
