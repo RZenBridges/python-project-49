@@ -1,12 +1,12 @@
-from brain_games.scripts import brain_games as game_interface
+from brain_games.cli import welcome_user
 
 ROUNDS = 3
 
 
 def game_on(game, rounds=ROUNDS):
+    print('Welcome to the Brain Games!')
+    player = welcome_user()
     print(game.DESCRIPTION)
-
-    player = game_interface.naming()
 
     for _ in range(rounds):
         question, answer = game.generate_game()
