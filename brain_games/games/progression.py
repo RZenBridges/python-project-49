@@ -8,6 +8,6 @@ def generate_game():
     step = random.randint(1, 10)
     progression = [str(i) for i in range(start, start + step * 10, step)]
     hide_index = random.randint(0, 9)
-    hidden_element = progression[hide_index]
+    answer = progression[hide_index]
     progression[hide_index] = '..'
-    return ' '.join(progression), hidden_element
+    return ' '.join(progression), answer
