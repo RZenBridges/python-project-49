@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 
-from brain_games.engine import game_on
 from brain_games import games
+from brain_games.engine import run
 
 
 def main():
     ''' Starts a game that presents an arithmetic expression'''
     ''' for the user to calculate '''
 
-    game_on(games.calc)
+    run(games.calc)
 
 
 if __name__ == '__main__':
