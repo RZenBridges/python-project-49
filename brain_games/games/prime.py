@@ -12,7 +12,7 @@ def is_prime(number):
     return True
 
 
-def generate_game():
+def generate_question_and_answer():
     number = random.randint(1, 100)
     answer = 'yes' if is_prime(number) else 'no'
     return str(number), answer

@@ -9,7 +9,7 @@ def run(game, rounds=GAME_ROUNDS_COUNT):
     print(game.DESCRIPTION)
 
     for _ in range(rounds):
-        question, answer = game.generate_game()
+        question, answer = game.generate_question_and_answer()
         print(f'Question: {question}')
         user_answer = input('Your answer: ')
 

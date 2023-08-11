@@ -10,7 +10,7 @@ OPERATOR = {
 }
 
 
-def generate_game():
+def generate_question_and_answer():
     num1 = random.randint(1, 10)
     num2 = random.randint(11, 100)
     action = random.choice(list(OPERATOR.keys()))
